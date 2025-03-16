@@ -6,13 +6,17 @@ import { BrowserRouter as Router,Routes,Route,Link } from "react-router-dom"
 import {SignIn } from "./SignIn";
 import SignUp from "./SignUp";
 import  Home from "./Home";
+
+
+
+
 function HeaderNav() {
   return (
-    <Router>
+    <Router basename="/ReactProject1">
     <nav className="navbar navbar-expand-sm position-sticky fixed-top bg-body-tertiary border border-dark">
       <div className="container-fluid">
         {/* Logo */}
-        <Link className="navbar-brand" to="/signup">
+        <Link className="navbar-brand" to="/">
           <img
             src={flightLogo}
             alt="site_logo"
