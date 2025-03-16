@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="form-input">
+    <input type="text" class="form-input-text">
+    <p></p>
+  </div>
+  <script>
+
+
+function handleData(){
+const url = "https://freetestapi.com/api/v1/airlines";
+
+let output=0;
+let datas=fetch(url,{mode:"no-cors"})
+.then(response=>{
+  return response.json();
+})
+.then(data=>{
+   return data;
+})
+console.log(datas)
+}
+handleData();
+  </script>
+</body>
+</html>
