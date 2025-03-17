@@ -27,6 +27,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import PlaceDetails from "../Data/data";
+import {service} from "../Data/data";
 // PlaceDetails.forEach(({cityName})=>{
 //   console.log(cityName);
 // })
@@ -45,11 +46,66 @@ let commonWidth = "29%";
 //carousel item icon font size and padding
 let commonStyleForIcon = `fs-1 p-3`;
 
+
+
+import vacationSelfie from '../assets/images/vacationSelfie.jpg'
+
+
+const ServiceCarousel=()=>{
+return (
+  <>
+  <h1 className={commonStylesForSubHeading}>Our Services</h1>
+     <Swiper
+      modules={[Navigation]} 
+      navigation
+      spaceBetween={30}
+      breakpoints={{
+        320: { slidesPerView: 1 },
+        768: { slidesPerView: 3 },
+        992: { slidesPerView: 4 },
+      }}
+    >
+      {
+        service.map((item1)=>(
+     <SwiperSlide key={Math.random()}>
+      <Service item1={item1}/>
+     </SwiperSlide>
+       ))
+      }
+    </Swiper>
+  </>
+)
+}
+
+const Service=({item1})=>{
+  console.log(item1)
+  return (
+  <>
+   
+  <div className="container-fluid mt-5" style={{backgroundColor:'#F0F2A6'}}>
+    <div className="row"></div>
+ 
+  <div className="row">
+    <div className="col-md-3">
+   <div className="card shadow-lg">
+    <img src={vacationSelfie} alt="" className="card-img-top rounded-3" />
+    <div className="card-body">
+          <h1 className="fs-2 text-center">hi</h1>
+    </div>
+   </div>
+   </div>
+   </div>
+  </div>
+  </>
+  )
+
+}
 //popular Destinations Carousel
 
 const PopularDestinationCarousel = () => {
   return (
     <>
+     <h1 className={commonStylesForSubHeading}>Popular Destinations</h1>
     <Swiper
       modules={[Navigation]} 
       navigation
@@ -395,6 +451,8 @@ const Home = () => {
       <FacilityCarousel />
       <BussinessBanner />
       <PopularDestinationCarousel />
+      {/* <Service/> */}
+      <ServiceCarousel/>
     </>
   );
 };
