@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "gitPush": "git add . && git commit -m 'mod'&& git push origin main"
+    "gitPush": "git add . && git commit -m 'mod'&& git push origin main && npm run build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
