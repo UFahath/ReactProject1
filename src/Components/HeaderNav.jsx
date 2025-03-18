@@ -6,6 +6,7 @@ import { BrowserRouter as Router,Routes,Route,Link } from "react-router-dom"
 import {SignIn } from "./SignIn";
 import SignUp from "./SignUp";
 import  Home from "./Home";
+import { BussinessTrip } from "./BussinessTrip";
 
 
 
@@ -82,6 +83,7 @@ function HeaderNav() {
       <Route path='/' element={<Home/>}/>
       <Route path="/signup" element={<SignUp/>}/>
       <Route path="/signin" element={<SignIn/>}/>
+      <Route path="/bussinessTrip" element={<BussinessTrip/>}/>
     </Routes>
     </Router>
   );
