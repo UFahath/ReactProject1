@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Select from "react-select";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export const Selection = () => {
   let [source, setSource] = useState([]);
@@ -82,15 +83,23 @@ export const Selection = () => {
 
 export const Dropdown = () => {
   let [incrementValue, setIncrement] = useState(0);
+  let [incrementValue1, setIncrement1] = useState(0);
+  let [incrementValue2, setIncrement2] = useState(0);
 
-  let increment = (e) => {
-    e.preventDefault();
+  let increment = (event) => {
+    event.stopPropagation();
+    if(incrementValue<9)
+    {
     setIncrement(incrementValue + 1);
+    }
   };
 
-  let decrement = (e) => {
-    e.preventDefault();
+  let decrement = (event) => {
+    event.stopPropagation();
+    if(incrementValue>0)
+    {
     setIncrement(incrementValue - 1);
+    }
   };
 
   return (
@@ -114,7 +123,7 @@ export const Dropdown = () => {
               +
             </button>
             <span>{incrementValue}</span>
-            <button className="rounded-circle mx-4 btn btn-outline-success">
+            <button className="rounded-circle mx-4 btn btn-outline-success" onClick={decrement}>
               -
             </button>
           </li>
